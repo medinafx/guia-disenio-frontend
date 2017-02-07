@@ -421,7 +421,7 @@ Los recursos serán únicamente manipulados usando peticiones HTTP, donde los m�
 
 | **HTTP Verb** | **CRUD** | **Colección (ej. /libros)** | **Instancia de una colección (ej. /libros)** |
 | ------------- | -------- | ----------------------------| -------------------------------------------- |
-| POST          | Crear    | 201 (Created), &#39;Location&#39; header with link to /customers/{id} containing new ID. | 404 (Not Found), 409 (Conflict) si el recurso ya existe. |
+| POST          | Crear    | 201 (Created), &#39;Location&#39; header con un link hacia el recurso creado /libros/{id}. | 404 (Not Found), 409 (Conflict) si el recurso ya existe. |
 | GET | Leer/Recuperar | 200 (OK), colección de libros. Implementar paginación, ordenamiento, filtros por atributo y selección de atributos. | 200 (OK), un único libro. 404 (Not Found), si el ID no existe o es inválido. |
 | PUT | Actualizar | 404 (Not Found). No se permite actualizar la colección completa (opcional). | 200 (OK) or 204 (No Content). 404 (Not Found) si el ID no existe o es inválido. |
 | DELETE | Delete | 404 (Not Found). No se permite eliminar una colección completa. | 200 (OK). 404 (Not Found), si el ID no existe o es inválido.  |
