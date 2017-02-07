@@ -108,7 +108,7 @@ Una URI típica está compuesta de las siguientes partes:
 
 <br>
 
-- La versión del API. Generalmente solo el número de versiones mayores será usado como path parameter, con el prefijo **v**. Ejemplo: **/v1**.
+- La versión del API. Generalmente solo los números de versiones mayores serán usados como path parameter, con el prefijo **v**. Ejemplo: **/v1**.
 -  Un namespace usado como un medio para agrupar los recursos de un modo más lógico y jerárquico.
 - Un sustantivo plural que corresponde al nombre del recurso que se accede en el namespace; generalmente una colección de recursos.
 - El id del recurso seleccionado.
