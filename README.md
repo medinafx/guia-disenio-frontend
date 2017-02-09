@@ -132,7 +132,8 @@ Una URI típica está compuesta de las siguientes partes:
 
 -  La URI está compuesta exclusivamente por caracteres en minúsculas. No usar lowerCamelCase, UpperCamelCase o cualquier otro uso de mayúsculas.
 -  Las URI no tienen pleca (&quot;/&quot;) como último carácter.
--  Usar guión medio (&quot;-&quot;) para separar palabras y así mejorar su lectura. No usar guión bajo (&quot;\_&quot;) . Las URI no tienen la extensión de un archivo.  
+-  Usar guión medio (&quot;-&quot;) para separar palabras y así mejorar su lectura. No usar guión bajo (&quot;\_&quot;). 
+-  Las URI no tienen la extensión de un archivo.  
 
 <h3 href="34"> 3.4 Ejemplo de URIs válidas</h3>
 
@@ -184,7 +185,7 @@ Una representación es una serialización de un recurso - los recursos son datos
 El header Content-Type se usará para indicar el media-type del HTTP body enviado o recibido. Por ejemplo:  
 
 ```
-Content-Type** : text/html
+Content-Type: text/html
 ```
 <br>
 
