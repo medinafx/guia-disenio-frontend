@@ -367,7 +367,7 @@ El API permitirá seleccionar los atributos a retornar de la  instancia de un re
 Ejemplo: Recuperamos únicamente el título del libro con ID 123.
 
 ```
-http://domain.com/api/v1/libros/123?fields=autor
+http://domain.com/api/v1/libros/123?fields=titulo
 ```
 
 <br>
@@ -392,7 +392,7 @@ fields.
 Ejemplo: Recuperamos el título de todos los libros en una colección de recursos.
 
 ```
-http://domain.com/api/v1/libros?fields=autor
+http://domain.com/api/v1/libros?fields=titulo
 ```
 <br>
 
