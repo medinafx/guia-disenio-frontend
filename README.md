@@ -472,18 +472,15 @@ Por ejemplo:
 ## 7 Seguridad
 ----------------------
 
-Las APIs exponen los sistemas en el backend hacia el exterior, incrementando el riesgo de que la información sea robada o que dichos sistemas sean comprometidos. Por lo anterior, las APIs deben garantizar que quienes consumen la información estén debidamente autenticados y autorizados para consumir la información que expone la API.
+Las APIs exponen los sistemas en el backend hacia el exterior, incrementando el riesgo de que la información sea robada o que dichos sistemas sean comprometidos. Por lo anterior, las APIs deben garantizar que quienes consumen la información estén debidamente autenticados y autorizados.
 
 <br>
 
-Dicho lo anterior, cuando decimos seguridad generalmente nos referimos a los siguientes dos aspectos:
+A continuación abordamos dos de los aspectos de la seguridad antes mencionados:
 
 <br>
 
-**Autenticación**
-
-<br>
-
+**Autenticación**  
 La autenticación determina si un usuario es quien dice ser. Usualmente quien consume el API, el usuario final, o ambos, deberán estar autenticados por el proveedor del API para poder usar el servicio. Lo anterior puede suponer verificar un usuario y contraseña, o verificar si un token es válido y vigente.
 
 <br>
@@ -492,8 +489,7 @@ Es importante señalar que la autenticación no significa que el cliente puede a
 
 <br>
 
-**Autorización**
-
+**Autorización**  
 La autorización comprende verificar si un usuario está autorizado para acceder o modificar un recurso, generalmente a través de la definición de roles y la asociación de éstos con dichos usuarios.
 
 Por ejemplo, una regla de autorización puede indicar que un usuario con el rol de cliente solo tiene permitido hacer uso de los EndPoint - recurso más método HTTP - de lectura (GET), mientras que los usuarios con el rol de administrador pueden hacer uso de todos los EndPoint.
