@@ -555,7 +555,7 @@ HTTP Basic depende de TSL, y por lo tanto la seguridad de la mayoría de peticio
 
 Secure HTTP (HTTPS) - también llamado HTTP sobre TSL/SSL- es una combinación del protocolo HTTP con el protocolo TLS/SSL que es usado para establecer comunicaciones cifradas.
 
-HTTPS usa el esquema https en la URL en vez del esquema http. Por otra parte, el puerto por defecto para HTTPS es 443, en vez de 80.
+HTTPS usa el esquema https en la URL en vez del esquema http. Por otra parte, el puerto por defecto para HTTPS es 443 en vez de 80.
 
 <br>
 
