@@ -30,7 +30,8 @@
       * [7.1.1 HTTP Basic](#711-http-basic).
       * [7.1.2 TSL](#712-tsl).
       * [7.1.3 HTTPS](#713-https).
-      * [7.2 HTTP status](#72-http-status)
+      * [7.2 HTTP status](#72-http-status)  
+
 ## 2 Consideraciones.
 ----------------------
 El presente documento provee una serie de directrices y ejemplos para el diseño frontend de servicios web RESTful, los cuales están basados en las restricciones de estilo arquitectónico REST, el protocolo HTTP - protocolo usado por REST, y las mejores prácticas y convenciones recopiladas en su mayor parte de las siguientes fuentes:
@@ -508,6 +509,8 @@ Por ejemplo, una regla de autorización puede indicar que un usuario con el rol 
 HTTP basic es un mecanismo simple para la autenticación y autorización de las peticiones hechas al API. Dicho mecanismo se encuentra estandarizado en la especificación **IETF RFC 7235**, por lo que es soportado por la mayoría de librerías HTTP y servidores.  
 
 En el mecanismo HTTP Basic quien consume la API hace peticiones HTTP incluyendo el nombre de usuario y contraseña en el **HEADER HTTP Authorization**, por otra parte, HTTP Basic también puede ser usado con un mecanismo de desafío-respuesta:  
+
+<br>
 
 1. El cliente realiza una petición HTTP solicitando un recurso protegido.  
 2. El servidor responde con el status code **401 Unauthorized**, junto con el **HEADER WWW-Authenticate: Basic**.  
