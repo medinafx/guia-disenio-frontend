@@ -557,6 +557,8 @@ Secure HTTP (HTTPS) - también llamado HTTP sobre TSL/SSL- es una combinación d
 
 HTTPS usa el esquema https en la URL en vez del esquema http. Por otra parte, el puerto por defecto para HTTPS es 443, en vez de 80.
 
+<br>
+
 ### 7.2 HTTP status.
 
 <br>
