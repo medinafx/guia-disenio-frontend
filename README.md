@@ -26,7 +26,7 @@
 - [6 Uso de métodos HTTP](#user-content--6).  
       * [6.1 Idempotencia y métodos seguros](#user-content--61).  
 - [7 Seguridad](#7-seguridad).  
-      * [7.1 Mecanismos de seguridad](#).
+      * [7.1 Mecanismos de seguridad](#71-mecanismos-de-seguridad).
       * [7.1.1 HTTP Basic](#711-http-basic).
       * [7.1.2 TSL](#712-tsl).
       * [7.1.3 HTTPS](#713-https).
