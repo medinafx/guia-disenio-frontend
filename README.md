@@ -512,7 +512,7 @@ HTTP basic es un mecanismo simple para la autenticación y autorización de las 
 
 <br>
 
-En el mecanismo HTTP Basic quien consume la API hace peticiones HTTP incluyendo el nombre de usuario y contraseña en el **HEADER HTTP Authorization**, por otra parte, HTTP Basic también puede ser usado con un mecanismo de desafío-respuesta:  
+En el mecanismo HTTP Basic, quien consume la API hace peticiones HTTP incluyendo el nombre de usuario y contraseña en el **HEADER HTTP Authorization**, por otra parte, HTTP Basic también puede ser usado con un mecanismo de desafío-respuesta:  
 
 <br>
 
@@ -541,7 +541,7 @@ Es importante señalar que la codificación Base64 puede ser fácilmente reverti
 
 <br>
 
-Transport Layer Security (en español: seguridad de la capa de transporte) y su predecessor, Secure Sockets Layer (SSL), ambos referidos frecuentemente como “SSL, son protocolos de encriptación para enviar mensajes de forma segura en una red de computadoras.  
+Transport Layer Security (en español: seguridad de la capa de transporte) y su predecessor, Secure Sockets Layer (SSL), ambos referidos frecuentemente como “SSL", son protocolos de encriptación para enviar mensajes de forma segura en una red de computadoras.  
 
 <br>
 
