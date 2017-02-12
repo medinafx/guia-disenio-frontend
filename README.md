@@ -481,6 +481,9 @@ A continuación abordamos dos de los aspectos de la seguridad antes mencionados:
 <br>
 
 **Autenticación**  
+
+<br>
+
 La autenticación determina si un usuario es quien dice ser. Usualmente quien consume el API, el usuario final, o ambos, deberán estar autenticados por el proveedor del API para poder usar el servicio. Lo anterior puede suponer verificar un usuario y contraseña, o verificar si un token es válido y vigente.
 
 <br>
@@ -489,7 +492,10 @@ Es importante señalar que la autenticación no significa que el cliente puede a
 
 <br>
 
-**Autorización**  
+**Autorización**
+
+<br>
+
 La autorización comprende verificar si un usuario está autorizado para acceder o modificar un recurso, generalmente a través de la definición de roles y la asociación de éstos con dichos usuarios.
 
 Por ejemplo, una regla de autorización puede indicar que un usuario con el rol de cliente solo tiene permitido hacer uso de los EndPoint - recurso más método HTTP - de lectura (GET), mientras que los usuarios con el rol de administrador pueden hacer uso de todos los EndPoint.
