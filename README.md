@@ -512,7 +512,7 @@ HTTP basic es un mecanismo simple para la autenticación y autorización de las 
 
 <br>
 
-En el mecanismo HTTP Basic, quien consume la API hace peticiones HTTP incluyendo el nombre de usuario y contraseña en el **HEADER HTTP Authorization**, por otra parte, HTTP Basic también puede ser usado con un mecanismo de desafío-respuesta:  
+En el mecanismo HTTP Basic, quien consume la API hace peticiones HTTP incluyendo el nombre de usuario y contraseña en el HEADER **HTTP Authorization**, por otra parte, HTTP Basic también puede ser usado con un mecanismo de desafío-respuesta:  
 
 <br>
 
@@ -567,3 +567,4 @@ HTTPS usa el esquema https en la URL en vez del esquema http. Por otra parte, el
 | ------ | ---------------------- |
 | 401  Unauthorized | El cliente intentó realizar una acción sin estar debidamente autenticado. |
 | 403  Forbidden    | De acuerdo a las políticas/reglas de control de acceso, el usuario no tiene la autorización de realizar la acción solicitada |
+| 405 Method not Allowed | El método no es soportado - no ha sido implementado -. Si el usuario no está autenticado retornar 401.
