@@ -141,7 +141,7 @@ Una URI típica está compuesta de las siguientes partes:
 -  Usar guión medio (&quot;-&quot;) para separar palabras y así mejorar su lectura. No usar guión bajo (&quot;\_&quot;).
 -  Las URI no tienen la extensión de un archivo.  
 
-<h3 href="34"> 3.4 Ejemplo de URIs válidas</h3>
+<h3 href="34"> 3.4 Ejemplo de URIs válidas.</h3>
 
 <br>
 
@@ -169,7 +169,7 @@ http://domain.com/api/v1/libros/123/capitulos
 http://domain.com/api/v1/libros/123/capitulos/1
 ```
 
-### 3.5 URIs estables.
+### 3.5 URIs estables.  
 
 <br>
 
@@ -178,13 +178,13 @@ la consume. Si dicha URI debe ser cambiada por una razón legítima, la respuest
 retornar el status code 301 - Moved Permanently, y el nuevo link al recurso en el HEADER
 location.  
 
-## 4 Representaciones
+## 4 Representaciones.  
 
 <br>
 
 Una representación es una serialización de un recurso - los recursos son datos crudos -. Cuando transferimos un recurso entre el API y el cliente éstos viajan como texto, por lo que necesitan ser serializados en el destino. Para serializar un recurso en una representación y deserializarlo de regreso a un recurso, usaremos las reglas definidas en los MIME-TYPES de HTTP que podremos encontrar en la especificación IETF RFC 2045.  
 
-### 4.1 Header Content-Type
+### 4.1 Header Content-Type.
 
 <br>
 
@@ -220,7 +220,7 @@ Por su parte, el header Content-Type será usado por el API para indicar la regl
 Si el mecanismo de negociación de contenido no puede encontrar una representación que pueda ser tanto aceptado por el cliente como retornado por el API, se deberá retornar el status code **406 Not Acceptable**.  
 
 
-<h2 href="5"> 5 Parámetros</h2>
+<h2 href="5"> 5 Parámetros.</h2>
 ---------------------------------------
 
 Las API raramente retornan información estática, por el contrario, retornan información dinámica que varía de acuerdo a la información suministrada por la aplicación que consume la API, el usuario final o el cliente (Ej. navegador web).  
@@ -310,7 +310,7 @@ Por otra parte, si lo que se desea es recuperar los recursos que tengan el valor
 ```
 http://domain.com/api/v1/libros?search=George%20Martin
 ```
-#### 5.2.2 Ordenamiento  
+#### 5.2.2 Ordenamiento.  
 
 <br>
 
@@ -324,7 +324,7 @@ Ejemplo:  Ordenamos una colección de recursos libros por el atributo autor en o
 http://domain.com/api/v1/libros?sort=titulo&amp;sortOrder=desc
 ```
 
-#### 5.2.3 Localizadores
+#### 5.2.3 Localizadores.
 
 <br>
 
@@ -410,7 +410,7 @@ Para seleccionar más de un atributo, usaremos el query parameters fields mas li
 http://domain.com/api/v1/libros?fields=autor,anio
 ```
 
-#### 5.2.6 Metadata
+#### 5.2.6 Metadata.
 
 <br>
 
@@ -469,7 +469,7 @@ Por ejemplo:
 - GET /usuarios/1?activar
 - GET /usuarios/activar
 
-## 7 Seguridad
+## 7 Seguridad.
 ----------------------
 
 Las APIs exponen los sistemas en el backend hacia el exterior, incrementando el riesgo de que la información sea robada o que dichos sistemas sean comprometidos. Por lo anterior, las APIs deben garantizar que quienes consumen la información estén debidamente autenticados y autorizados.
@@ -496,13 +496,15 @@ Por ejemplo, una regla de autorización puede indicar que un usuario con el rol 
 
 <br>
 
-### 7.1 Mecanismos de seguridad
+### 7.1 Mecanismos de seguridad.
 
 #### 7.1.1 HTTP Basic.
 
 <br>
 
 HTTP basic es un mecanismo simple para la autenticación y autorización de las peticiones hechas al API. Dicho mecanismo se encuentra estandarizado en la especificación **IETF RFC 7235**, por lo que es soportado por la mayoría de librerías HTTP y servidores.  
+
+<br>
 
 En el mecanismo HTTP Basic quien consume la API hace peticiones HTTP incluyendo el nombre de usuario y contraseña en el **HEADER HTTP Authorization**, por otra parte, HTTP Basic también puede ser usado con un mecanismo de desafío-respuesta:  
 
