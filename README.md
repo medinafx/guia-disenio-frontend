@@ -25,7 +25,12 @@
       * [5.2.6 Metadata](#526-metadata).  
 - [6 Uso de métodos HTTP](#user-content--6).  
       * [6.1 Idempotencia y métodos seguros](#user-content--61).  
-
+- [7 Seguridad](#7-seguridad).  
+      * [7.1 Mecanismos de seguridad](#).
+      * [7.1.1 HTTP Basic](#711-http-basic).
+      * [7.1.2 TSL](#712-tsl).
+      * [7.1.3 HTTPS](#713-https).
+      * [7.2 HTTP status](#72-http-status)
 ## 2 Consideraciones.
 ----------------------
 El presente documento provee una serie de directrices y ejemplos para el diseño frontend de servicios web RESTful, los cuales están basados en las restricciones de estilo arquitectónico REST, el protocolo HTTP - protocolo usado por REST, y las mejores prácticas y convenciones recopiladas en su mayor parte de las siguientes fuentes:
@@ -132,7 +137,7 @@ Una URI típica está compuesta de las siguientes partes:
 
 -  La URI está compuesta exclusivamente por caracteres en minúsculas. No usar lowerCamelCase, UpperCamelCase o cualquier otro uso de mayúsculas.
 -  Las URI no tienen pleca (&quot;/&quot;) como último carácter.
--  Usar guión medio (&quot;-&quot;) para separar palabras y así mejorar su lectura. No usar guión bajo (&quot;\_&quot;). 
+-  Usar guión medio (&quot;-&quot;) para separar palabras y así mejorar su lectura. No usar guión bajo (&quot;\_&quot;).
 -  Las URI no tienen la extensión de un archivo.  
 
 <h3 href="34"> 3.4 Ejemplo de URIs válidas</h3>
@@ -462,3 +467,94 @@ Por ejemplo:
 
 - GET /usuarios/1?activar
 - GET /usuarios/activar
+
+## 7 Seguridad
+----------------------
+
+Las APIs exponen los sistemas en el backend hacia el exterior, incrementando el riesgo de que la información sea robada o que dichos sistemas sean comprometidos. Por lo anterior, las APIs deben garantizar que quienes consumen la información estén debidamente autenticados y autorizados para consumir la información que expone la API.
+
+<br>
+
+Dicho lo anterior, cuando decimos seguridad generalmente nos referimos a los siguientes dos aspectos:
+
+<br>
+
+**Autenticación**
+
+<br>
+
+La autenticación determina si un usuario es quien dice ser. Usualmente quien consume el API, el usuario final, o ambos, deberán estar autenticados por el proveedor del API para poder usar el servicio. Lo anterior puede suponer verificar un usuario y contraseña, o verificar si un token es válido y vigente.
+
+<br>
+
+Es importante señalar que la autenticación no significa que el cliente puede acceder a un recurso en particular.
+
+<br>
+
+**Autorización**
+
+La autorización comprende verificar si un usuario está autorizado para acceder o modificar un recurso, generalmente a través de la definición de roles y la asociación de éstos con dichos usuarios.
+
+Por ejemplo, una regla de autorización puede indicar que un usuario con el rol de cliente solo tiene permitido hacer uso de los EndPoint - recurso más método HTTP - de lectura (GET), mientras que los usuarios con el rol de administrador pueden hacer uso de todos los EndPoint.
+
+<br>
+
+### 7.1 Mecanismos de seguridad
+
+#### 7.1.1 HTTP Basic.
+
+<br>
+
+HTTP basic es un mecanismo simple para la autenticación y autorización de las peticiones hechas al API. Dicho mecanismo se encuentra estandarizado en la especificación **IETF RFC 7235**, por lo que es soportado por la mayoría de librerías HTTP y servidores.  
+
+En el mecanismo HTTP Basic quien consume la API hace peticiones HTTP incluyendo el nombre de usuario y contraseña en el **HEADER HTTP Authorization**, por otra parte, HTTP Basic también puede ser usado con un mecanismo de desafío-respuesta:  
+
+1. El cliente realiza una petición HTTP solicitando un recurso protegido.  
+2. El servidor responde con el status code **401 Unauthorized**, junto con el **HEADER WWW-Authenticate: Basic**.  
+3. El cliente agrega las credenciales en el **HEADER Authorization** y envía la petición nuevamente.  
+
+<br>
+
+Dicho lo anterior, el cliente por lo general enviará las credenciales de forma directa - paso 3 -, requiriendo para ello que el mensaje de petición tenga el siguiente encabezado.  
+
+<br>
+
+```
+Authorization: Basic {username}:{password}
+```
+<br>
+
+En el anterior encabezado, la combinación de usuario y contraseña deberá estar codificada con el esquema de codificación base64.
+
+<br>
+
+Es importante señalar que la codificación Base64 puede ser fácilmente revertida, y debido a que en el protocolo HTTP los mensajes de petición y respuesta viajan como texto plano en la red, es más que recomendable que HTTP basic se use junto con TSL.  
+
+#### 7.1.2 TSL.
+
+<br>
+
+Transport Layer Security (en español: seguridad de la capa de transporte) y su predecessor, Secure Sockets Layer (SSL), ambos referidos frecuentemente como “SSL, son protocolos de encriptación para enviar mensajes de forma segura en una red de computadoras.  
+
+<br>
+
+HTTP Basic depende de TSL, y por lo tanto la seguridad de la mayoría de peticiones a la API. TSL garantiza la confidencialidad e integridad de la información en el mensaje de petición y respuesta.
+
+<br>
+
+#### 7.1.3 HTTPS.
+
+<br>
+
+Secure HTTP (HTTPS) - también llamado HTTP sobre TSL/SSL- es una combinación del protocolo HTTP con el protocolo TLS/SSL que es usado para establecer comunicaciones cifradas.
+
+HTTPS usa el esquema https en la URL en vez del esquema http. Por otra parte, el puerto por defecto para HTTPS es 443, en vez de 80.
+
+### 7.2 HTTP status.
+
+<br>
+
+| Código | Descripción            |
+| ------ | ---------------------- |
+| 401  Unauthorized | El cliente intentó realizar una acción sin estar debidamente autenticado. |
+| 403  Forbidden    | De acuerdo a las políticas/reglas de control de acceso, el usuario no tiene la autorización de realizar la acción solicitada |
