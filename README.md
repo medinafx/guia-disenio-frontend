@@ -577,8 +577,6 @@ HTTPS usa el esquema https en la URL en vez del esquema http. Por otra parte, el
 
 ## 8 Rendimiento  
 
-Rendimiento
-
 Cuando abordamos la optimización de rendimiento en aplicaciones WEB RESTful, el
 almacenamiento en caché  es una de las primeras técnicas que se usan para dicho
 propósito, las cuales pueden ser implementadas en el cliente (ej. Navegador web),
