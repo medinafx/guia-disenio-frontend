@@ -580,9 +580,9 @@ HTTPS usa el esquema https en la URL en vez del esquema http. Por otra parte, el
 Cuando abordamos la optimización de rendimiento en aplicaciones WEB RESTful, el
 almacenamiento en caché  es una de las primeras técnicas que se usan para dicho
 propósito, las cuales pueden ser implementadas en el cliente (ej. Navegador web),
-el API y/o el backend.
+el API y/o el backend.  
 
-<br>
+<br>  
 
 Dicho lo anterior, en esta sección nos enfocaremos en el almacenamiento en caché
 del protocolo HTTP 1.1, ya que este mecanismo se encuentra estandarizado e
