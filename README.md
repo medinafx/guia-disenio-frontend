@@ -2,35 +2,39 @@
 
 <br>
 
-- [2 Consideraciones](#2-consideraciones).  
-      * [2.1 Responsabilidades del Servicio](#21-responsabilidades-del-servicio).  
-      * [2.2 Restricciones de la arquitectura REST](#22-restricciones-de-la-arquitectura-rest).  
-- [3 Diseño de URIs RESTful](#3).  
-      * [3.1 Estructura básica (plantilla)](#user-content--31).  
-      * [3.2 Plantilla para recursos relacionados](#32-plantilla-para-recursos-relacionados).  
-      * [3.3 Convenciones en el diseño de URIs](#33-convenciones-en-el-diseño-de-uris).  
-      * [3.4 Ejemplo de URIs válidas](#user-content--34).  
-      * [3.5 URIs estables](#35-uris-estables).  
-- [4 Representaciones](#4-representaciones).  
-      * [4.1 Header Content-Type](#41-header-content-type).  
-      * [4.2 Negociación de contenido](#user-content--42).  
+- [2 Consideraciones](#2-consideraciones)  
+      * [2.1 Responsabilidades del Servicio](#21-responsabilidades-del-servicio)  
+      * [2.2 Restricciones de la arquitectura REST](#22-restricciones-de-la-arquitectura-rest)  
+- [3 Diseño de URIs RESTful](#3)  
+      * [3.1 Estructura básica (plantilla)](#user-content--31)  
+      * [3.2 Plantilla para recursos relacionados](#32-plantilla-para-recursos-relacionados)  
+      * [3.3 Convenciones en el diseño de URIs](#33-convenciones-en-el-diseño-de-uris)  
+      * [3.4 Ejemplo de URIs válidas](#user-content--34)  
+      * [3.5 URIs estables](#35-uris-estables)  
+- [4 Representaciones](#4-representaciones)  
+      * [4.1 Header Content-Type](#41-header-content-type)  
+      * [4.2 Negociación de contenido](#user-content--42)  
 - [5 Parámetros](#user-content--5)  
-      * [5.1 Creación y actualización de recursos](#user-content--51).  
-      * [5.2 Recuperación de recursos](#user-content--52).  
-      * [5.2.1 Filtros](#521-filtros).  
-      * [5.2.2 Ordenamiento](#522-ordenamiento).  
-      * [5.2.3 Localizadores](#523-localizadores).  
-      * [5.2.4 Selección de atributos en la instancia de un recurso](#user-content--524).  
-      * [5.2.5 Selección de atributos en una colección de recursos](#user-content--525).  
-      * [5.2.6 Metadata](#526-metadata).  
-- [6 Uso de métodos HTTP](#user-content--6).  
-      * [6.1 Idempotencia y métodos seguros](#user-content--61).  
-- [7 Seguridad](#7-seguridad).  
-      * [7.1 Mecanismos de seguridad](#71-mecanismos-de-seguridad).
-      * [7.1.1 HTTP Basic](#711-http-basic).
-      * [7.1.2 TSL](#712-tsl).
-      * [7.1.3 HTTPS](#713-https).
+      * [5.1 Creación y actualización de recursos](#user-content--51)  
+      * [5.2 Recuperación de recursos](#user-content--52)  
+      * [5.2.1 Filtros](#521-filtros)  
+      * [5.2.2 Ordenamiento](#522-ordenamiento)  
+      * [5.2.3 Localizadores](#523-localizadores)  
+      * [5.2.4 Selección de atributos en la instancia de un recurso](#user-content--524)  
+      * [5.2.5 Selección de atributos en una colección de recursos](#user-content--525)  
+      * [5.2.6 Metadata](#526-metadata)  
+- [6 Uso de métodos HTTP](#user-content--6)  
+      * [6.1 Idempotencia y métodos seguros](#user-content--61)  
+- [7 Seguridad](#7-seguridad)  
+      * [7.1 Mecanismos de seguridad](#71-mecanismos-de-seguridad)
+      * [7.1.1 HTTP Basic](#711-http-basic)
+      * [7.1.2 TSL](#712-tsl)
+      * [7.1.3 HTTPS](#713-https)
       * [7.2 HTTP status](#72-http-status)  
+ - [8 Rendimiento](#8-rendimiento)  
+      * [8.1 Mecanismos de almacenamiento en caché HTTP](#81-mecanismos-de-almacenamiento-en-cache-HTTP)
+      * [8.1.1 ETag](#811-etag)
+      * [8.1.2 HEADERS Last-Modified/If-Modified-Since](#812-headers-last-modified/if-modified-since)  
 
 ## 2 Consideraciones.
 ----------------------
@@ -93,7 +97,7 @@ La arquitectura REST define seis restricciones  que comprenden la base de la con
       * Basado en recursos.  
       * Manipulación de recursos a través de sus representaciones.  
       * Mensajes descriptivos.  
-      * Hypermedia as the engine of the application state (HATEOAS).  
+      * Hypermedia as the engine of the application state (HATEOAS)  
 - Sin estado.  
 - Cacheable.  
 - Cliente-servidor.  
@@ -102,7 +106,7 @@ La arquitectura REST define seis restricciones  que comprenden la base de la con
 
 <h2 href="3">3 Diseño d  e URIs RESTful.</h2>
 
-<h3 href="31">3.1 Estructura básica (plantilla).</h3>
+<h3 href="31">3.1 Estructura básica (plantilla)</h3>
 ---------------------------------------
 
 ```
@@ -138,7 +142,7 @@ Una URI típica está compuesta de las siguientes partes:
 
 -  La URI está compuesta exclusivamente por caracteres en minúsculas. No usar lowerCamelCase, UpperCamelCase o cualquier otro uso de mayúsculas.
 -  Las URI no tienen pleca (&quot;/&quot;) como último carácter.
--  Usar guión medio (&quot;-&quot;) para separar palabras y así mejorar su lectura. No usar guión bajo (&quot;\_&quot;).
+-  Usar guión medio (&quot;-&quot;) para separar palabras y así mejorar su lectura. No usar guión bajo (&quot;\_&quot;)
 -  Las URI no tienen la extensión de un archivo.  
 
 <h3 href="34"> 3.4 Ejemplo de URIs válidas.</h3>
@@ -223,7 +227,7 @@ Si el mecanismo de negociación de contenido no puede encontrar una representaci
 <h2 href="5"> 5 Parámetros.</h2>
 ---------------------------------------
 
-Las API raramente retornan información estática, por el contrario, retornan información dinámica que varía de acuerdo a la información suministrada por la aplicación que consume la API, el usuario final o el cliente (Ej. navegador web).  
+Las API raramente retornan información estática, por el contrario, retornan información dinámica que varía de acuerdo a la información suministrada por la aplicación que consume la API, el usuario final o el cliente (Ej. navegador web)  
 
 Dicho lo anterior, el API podrá recibir información a través de los siguientes cuatro tipos de parámetros:
 
@@ -328,7 +332,7 @@ http://domain.com/api/v1/libros?sort=titulo&amp;sortOrder=desc
 
 <br>
 
-Los localizadores se expresan en la URI en forma de **path-parameters** y se usan exclusivamente para localizar un único recurso, como es el caso del **identificador del recurso** (recurso-id).  
+Los localizadores se expresan en la URI en forma de **path-parameters** y se usan exclusivamente para localizar un único recurso, como es el caso del **identificador del recurso** (recurso-id)  
 
 <br>
 
@@ -430,8 +434,8 @@ Los recursos serán únicamente manipulados usando peticiones HTTP, donde los m�
 | ------------- | -------- | ----------------------------| -------------------------------------------- |
 | POST          | Crear    | 201 (Created), &#39;Location&#39; header con un link hacia el recurso creado /libros/{id}. | 404 (Not Found), 409 (Conflict) si el recurso ya existe. |
 | GET | Leer/Recuperar | 200 (OK), colección de libros. Implementar paginación, ordenamiento, filtros por atributo y selección de atributos. | 200 (OK), un único libro. 404 (Not Found), si el ID no existe o es inválido. |
-| PUT | Actualizar | 404 (Not Found). No se permite actualizar la colección completa (opcional). | 200 (OK) or 204 (No Content). 404 (Not Found) si el ID no existe o es inválido. |
-| DELETE | Delete | 404 (Not Found). No se permite eliminar una colección completa. | 200 (OK). 404 (Not Found), si el ID no existe o es inválido.  |
+| PUT | Actualizar | 404 (Not Found) No se permite actualizar la colección completa (opcional) | 200 (OK) or 204 (No Content) 404 (Not Found) si el ID no existe o es inválido. |
+| DELETE | Delete | 404 (Not Found) No se permite eliminar una colección completa. | 200 (OK) 404 (Not Found), si el ID no existe o es inválido.  |
 
 <h3 href="61"> 6.1 Idempotencia y métodos seguros</h3>
 
@@ -568,3 +572,154 @@ HTTPS usa el esquema https en la URL en vez del esquema http. Por otra parte, el
 | 401  Unauthorized | El cliente intentó realizar una acción sin estar debidamente autenticado. |
 | 403  Forbidden    | De acuerdo a las políticas/reglas de control de acceso, el usuario no tiene la autorización de realizar la acción solicitada |
 | 405 Method not Allowed | El método no es soportado - no ha sido implementado -. Si el usuario no está autenticado retornar 401.
+
+<br>
+
+## 8 Rendimiento  
+
+Rendimiento
+
+Cuando abordamos la optimización de rendimiento en aplicaciones WEB RESTful, el
+almacenamiento en caché  es una de las primeras técnicas que se usan para dicho
+propósito, las cuales pueden ser implementadas en el cliente (ej. Navegador web),
+el API y/o el backend.
+
+Dicho lo anterior, en esta sección nos enfocaremos en el almacenamiento en caché
+del protocolo HTTP 1.1, ya que este mecanismo se encuentra estandarizado e
+implementado por la gran mayoría de la infraestructura basada en HTTP, como es
+el caso de servidores HTTP y proxies.
+
+### 8.1 Mecanismos de almacenamiento en caché HTTP
+
+<br>
+
+#### 8.1.1 ETag  
+
+El almacenamiento de caché al lado del cliente es implementado en HTTP mediante
+el uso del HEADER **Etag:{etag-value}**. El API siempre incluirá un ETag en la
+respuesta para enviarla junto con el recurso solicitado. ETags (Entity Tags) son
+valores hash en la respuesta HTTP que son calculados por el API. Los valores hash
+son específicos de una URL, y cada vez que el contenido de la respuesta cambia,
+también lo hacen dichos valores.  
+
+<br>
+
+A continuación describimos el flujo del almacenamiento en caché por ETag:  
+
+<br>
+
+1. El cliente realiza una petición HTTP solicitando un recurso.  
+
+
+```
+GET /libros HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+```
+
+2. El API calcula un hash a partir del contenido del mensaje de respuesta, y lo
+adjunto a dicha respuesta en el HEADER Etag.  
+
+
+```
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+ETag: "062c5d97b48d9df07fab132bc76c5da02"
+Accept: application/json
+Content-Length: 93
+Date: Accept: 2017-02-17T23:28:56.782Z
+
+{
+  "titulo": "APIs RESTful",
+  "anio": "2017"
+}
+```  
+
+3. El cliente almacena en caché la URL del API, el ETag y la respuesta. En la
+siguiente petición al API, el cliente incluirá el HADER **If-None-Match**:{etag-value},
+con el valor del ETag almacenado en caché.  
+
+```
+GET /libros HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+If-None-Match: "062c5d97b48d9df07fab132bc76c5da0222"  
+```
+
+4.  El API verifica el valor del ETag, y si éste no ha cambiado, el servidor
+retorna el status code **304 Not Modified**, indicando al cliente que use la
+respuesta almacenada en caché.  
+
+```
+HTTP/1.1 304 Not Modified
+Server: Apache-Coyote/1.1
+ETag: "062c5d97b48d9df07fab132bc76c5da02"
+Date: Accept: 2017-02-17T23:28:56.782Z
+```  
+<br>
+
+#### 8.1.2 HEADERS Last-Modified/If-Modified-Since
+
+<br>
+
+Los encabezados Last-Modified y If-Modified-Since ofrecen un mecanismo similar
+a los ETags, en el sentido que permiten a los clientes validar el estado de las
+respuestas almacenadas en caché. En vez de generar un hash a partir del contenido
+del mensaje de respuesta, un timestamp es usado y comparado para determinar
+si las respuestas en caché son válidas.
+
+<br>
+
+A continuación describimos el flujo del almacenamiento en caché por los
+HEADERS Last-Modified/If-Modified-Since:
+
+<br>
+
+1. El cliente realiza una petición HTTP solicitando un recurso.
+
+```
+GET /libros HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+```
+
+2. El API adjunta a la respuesta el HEADER Last-Modified con la fecha de la
+última modificación del recurso solicitado.
+
+```
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Last-Modified: 2017-01-17T23:28:56.782Z
+Accept: application/json
+Content-Length: 93
+Date: Accept: 2017-02-17T23:28:56.782Z
+
+{
+  "titulo": "APIs RESTful",
+  "anio": "2017"
+}
+```  
+
+3. El cliente almacena en caché la URL del API, la fecha Last-Modified y la respuesta. En la
+siguiente petición al API, el cliente incluirá el HADER **If-Modified-Since**:{last-modified-value},
+con la fecha almacenada en caché.  
+
+```
+GET /libros HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+If-None-Match: 2017-01-17T23:28:56.782Z
+```
+
+4.  El API compara la fecha del HEADER **If-Modified-Since** con la fecha
+de modificación en el API; si son iguales el servidor retorna el status code
+ **304 Not Modified**, indicando al cliente que use la respuesta almacenada
+ en caché.  
+
+```
+HTTP/1.1 304 Not Modified
+Server: Apache-Coyote/1.1
+Date: Accept: 2017-02-17T23:28:56.782Z
+Last-Modified: 2017-01-17T23:28:56.782Z
+```  
+<br>
