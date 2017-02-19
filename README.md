@@ -591,9 +591,6 @@ implementado por la gran mayoría de la infraestructura basada en HTTP, como es
 el caso de servidores HTTP y proxies.
 
 ### 8.1 Mecanismos de almacenamiento en caché HTTP
-
-<br>
-
 #### 8.1.1 ETag  
 
 El almacenamiento de caché al lado del cliente es implementado en HTTP mediante
