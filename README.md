@@ -31,7 +31,7 @@
       * [7.1.2 TSL](#712-tsl)
       * [7.1.3 HTTPS](#713-https)
       * [7.2 HTTP status](#72-http-status)  
- - [8 Rendimiento](#8-rendimiento)  
+- [8 Rendimiento](#8-rendimiento)  
       * [8.1 Mecanismos de almacenamiento en caché HTTP](#81-mecanismos-de-almacenamiento-en-cache-HTTP)
       * [8.1.1 ETag](#811-etag)
       * [8.1.2 HEADERS Last-Modified/If-Modified-Since](#812-headers-last-modified/if-modified-since)  
