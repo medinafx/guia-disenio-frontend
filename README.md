@@ -582,6 +582,8 @@ almacenamiento en caché  es una de las primeras técnicas que se usan para dich
 propósito, las cuales pueden ser implementadas en el cliente (ej. Navegador web),
 el API y/o el backend.
 
+<br>
+
 Dicho lo anterior, en esta sección nos enfocaremos en el almacenamiento en caché
 del protocolo HTTP 1.1, ya que este mecanismo se encuentra estandarizado e
 implementado por la gran mayoría de la infraestructura basada en HTTP, como es
@@ -660,7 +662,7 @@ Date: Accept: 2017-02-17T23:28:56.782Z
 
 <br>
 
-Los encabezados Last-Modified y If-Modified-Since ofrecen un mecanismo similar
+Los encabezados **Last-Modified** y **If-Modified-Since** ofrecen un mecanismo similar
 a los ETags, en el sentido que permiten a los clientes validar el estado de las
 respuestas almacenadas en caché. En vez de generar un hash a partir del contenido
 del mensaje de respuesta, un timestamp es usado y comparado para determinar
