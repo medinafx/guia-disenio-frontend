@@ -606,7 +606,7 @@ A continuación describimos el flujo del almacenamiento en caché por ETag:
 
 <br>
 
-1. El cliente realiza una petición HTTP solicitando un recurso.  
+1 El cliente realiza una petición HTTP solicitando un recurso.  
 
 
 ```
@@ -615,7 +615,7 @@ Host: localhost:8080
 Accept: application/json
 ```
 
-2. El API calcula un hash a partir del contenido del mensaje de respuesta, y lo
+2 El API calcula un hash a partir del contenido del mensaje de respuesta, y lo
 adjunto a dicha respuesta en el HEADER Etag.  
 
 
@@ -633,7 +633,7 @@ Date: Accept: 2017-02-17T23:28:56.782Z
 }
 ```  
 
-3. El cliente almacena en caché la URL del API, el ETag y la respuesta. En la
+3 El cliente almacena en caché la URL del API, el ETag y la respuesta. En la
 siguiente petición al API, el cliente incluirá el HADER **If-None-Match**:{etag-value},
 con el valor del ETag almacenado en caché.  
 
@@ -644,7 +644,7 @@ Accept: application/json
 If-None-Match: "062c5d97b48d9df07fab132bc76c5da0222"  
 ```
 
-4.  El API verifica el valor del ETag, y si éste no ha cambiado, el servidor
+4  El API verifica el valor del ETag, y si éste no ha cambiado, el servidor
 retorna el status code **304 Not Modified**, indicando al cliente que use la
 respuesta almacenada en caché.  
 
@@ -673,7 +673,7 @@ HEADERS Last-Modified/If-Modified-Since:
 
 <br>
 
-1. El cliente realiza una petición HTTP solicitando un recurso.
+1 El cliente realiza una petición HTTP solicitando un recurso.
 
 ```
 GET /libros HTTP/1.1
@@ -681,7 +681,7 @@ Host: localhost:8080
 Accept: application/json
 ```
 
-2. El API adjunta a la respuesta el HEADER Last-Modified con la fecha de la
+2 El API adjunta a la respuesta el HEADER Last-Modified con la fecha de la
 última modificación del recurso solicitado.
 
 ```
@@ -698,7 +698,7 @@ Date: Accept: 2017-02-17T23:28:56.782Z
 }
 ```  
 
-3. El cliente almacena en caché la URL del API, la fecha Last-Modified y la respuesta. En la
+3 El cliente almacena en caché la URL del API, la fecha Last-Modified y la respuesta. En la
 siguiente petición al API, el cliente incluirá el HADER **If-Modified-Since**:{last-modified-value},
 con la fecha almacenada en caché.  
 
@@ -706,10 +706,10 @@ con la fecha almacenada en caché.
 GET /libros HTTP/1.1
 Host: localhost:8080
 Accept: application/json
-If-None-Match: 2017-01-17T23:28:56.782Z
+If-Modified-Since: 2017-01-17T23:28:56.782Z
 ```
 
-4.  El API compara la fecha del HEADER **If-Modified-Since** con la fecha
+4  El API compara la fecha del HEADER **If-Modified-Since** con la fecha
 de modificación en el API; si son iguales el servidor retorna el status code
  **304 Not Modified**, indicando al cliente que use la respuesta almacenada
  en caché.  
