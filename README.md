@@ -104,7 +104,7 @@ La arquitectura REST define seis restricciones  que comprenden la base de la con
 - Sistema por capas.  
 - Código por demanda.  
 
-<h2 href="3">3 Diseño d  e URIs RESTful.</h2>
+<h2 href="3">3 Diseño de URIs RESTful.</h2>
 
 <h3 href="31">3.1 Estructura básica (plantilla)</h3>
 ---------------------------------------
