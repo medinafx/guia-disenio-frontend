@@ -64,8 +64,6 @@ anterior, existen cuatro responsabilidades principales que deben ser satisfechas
 legacy systems, otros servicios. Cada API deberá decidir qué backend debe usar para reunir
 la información solicitada, de acuerdo al contenido o contexto de la petición.  
 
-<br>
-
 - **Estructurar y dar formato a los datos:** Cuando los datos son expuestos, éstos deben
 tener una estructura y formato simple  que sea fácil de consumir por el cliente. Es deber
 del API abstraer la complejidad de los sistemas en el backend y proveer una interfaz
